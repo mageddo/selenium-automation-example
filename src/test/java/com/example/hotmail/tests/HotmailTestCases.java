@@ -2,16 +2,15 @@ package com.example.hotmail.tests;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import junit.framework.TestCase;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
 
 import com.example.hotmail.model.HomePage;
 import com.example.hotmail.model.LoginPage;
 import com.example.hotmail.model.ResetPasswordPage;
+import junit.framework.TestCase;
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * The {@code Sample} class represents sample tests for
@@ -26,7 +25,7 @@ public class HotmailTestCases extends TestCase {
 	
 	private static final String PASSWORD = "password";
 	
-	private static final String SELENIUM_RC_URL = "http://localhost:4444/wd/hub";
+	private static final String SELENIUM_RC_URL = "http://selenium-hub.dev:4444/wd/hub";
 	
 	private static WebDriver driver = null;
 
@@ -34,10 +33,7 @@ public class HotmailTestCases extends TestCase {
 	 * @see junit.framework.TestCase#setUp()
 	 */
 	public void setUp() throws Exception {
-		FirefoxProfile profile = new FirefoxProfile();
-		profile.setPreference("intl.accept_languages", "en");
-		DesiredCapabilities capabillities = DesiredCapabilities.firefox();
-		capabillities.setCapability("firefox_profile", profile);
+		DesiredCapabilities capabillities = DesiredCapabilities.chrome();
 		driver = new RemoteWebDriver(new URL(SELENIUM_RC_URL), capabillities);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}

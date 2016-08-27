@@ -1,4 +1,4 @@
-package com.example.hotmail.model;
+package com.example;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
