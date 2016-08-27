@@ -31,6 +31,7 @@ public class GoogleSearchTest {
 	public void search() throws Exception {
 		final int search = new GoogleSearch(driver).search("mageddo.com");
 		Assert.assertNotEquals(search, 0);
+		driver.close();
 	}
 
 }
