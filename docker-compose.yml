@@ -21,3 +21,12 @@ services:
       - hub
     network_mode: bridge
     privileged: true
+
+  standalone-chrome:
+    image: selenium/standalone-chrome:2.53.0
+    container_name: standalone-chrome
+    hostname: standalone-chrome.dev
+    ports:
+      - 4444
+    network_mode: bridge
+    privileged: true
