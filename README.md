@@ -1,3 +1,5 @@
+## >>>> Moved to [this repo](https://github.com/mageddo/java-examples/tree/master/selenium-automation-example)
+
 Selenium-automation-example
 =======================
 
